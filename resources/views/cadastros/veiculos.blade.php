@@ -7,110 +7,57 @@
        <div class="content-wrapper">
             <!-- Content -->
             <div class="container-xxl flex-grow-1 container-p-y">
-              <!-- Product List Widget -->
-              <div class="card mb-6">
-                <div class="card-widget-separator-wrapper">
-                  <div class="card-body card-widget-separator">
-                    <div class="row gy-4 gy-sm-1">
-                      <div class="col-sm-6 col-lg-3">
-                        <div
-                          class="d-flex justify-content-between align-items-start card-widget-1 border-end pb-4 pb-sm-0">
-                          <div>
-                            <p class="mb-1">In-store Sales</p>
-                            <h4 class="mb-1">$5,345.43</h4>
-                            <p class="mb-0">
-                              <span class="me-2">5k orders</span
-                              ><span class="badge rounded-pill bg-label-success">+5.7%</span>
-                            </p>
-                          </div>
-                          <div class="avatar me-sm-6">
-                            <span class="avatar-initial rounded bg-label-secondary text-heading">
-                              <i class="icon-base ri ri-home-6-line icon-24px"></i>
-                            </span>
-                          </div>
-                        </div>
-                        <hr class="d-none d-sm-block d-lg-none me-6" />
-                      </div>
-                      <div class="col-sm-6 col-lg-3">
-                        <div
-                          class="d-flex justify-content-between align-items-start card-widget-2 border-end pb-4 pb-sm-0">
-                          <div>
-                            <p class="mb-1">Website Sales</p>
-                            <h4 class="mb-1">$674,347.12</h4>
-                            <p class="mb-0">
-                              <span class="me-2">21k orders</span
-                              ><span class="badge rounded-pill bg-label-success">+12.4%</span>
-                            </p>
-                          </div>
-                          <div class="avatar me-lg-6">
-                            <span class="avatar-initial rounded bg-label-secondary text-heading">
-                              <i class="icon-base ri ri-computer-line icon-24px"></i>
-                            </span>
-                          </div>
-                        </div>
-                        <hr class="d-none d-sm-block d-lg-none" />
-                      </div>
-                      <div class="col-sm-6 col-lg-3">
-                        <div
-                          class="d-flex justify-content-between align-items-start border-end pb-4 pb-sm-0 card-widget-3">
-                          <div>
-                            <p class="mb-1">Discount</p>
-                            <h4 class="mb-1">$14,235.12</h4>
-                            <p class="mb-0">6k orders</p>
-                          </div>
-                          <div class="avatar me-sm-6">
-                            <span class="avatar-initial rounded bg-label-secondary text-heading">
-                              <i class="icon-base ri ri-gift-line icon-24px"></i>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6 col-lg-3">
-                        <div class="d-flex justify-content-between align-items-start">
-                          <div>
-                            <p class="mb-1">Affiliate</p>
-                            <h4 class="mb-1">$8,345.23</h4>
-                            <p class="mb-0">
-                              <span class="me-2">150 orders</span
-                              ><span class="badge rounded-pill bg-label-danger">-3.5%</span>
-                            </p>
-                          </div>
-                          <div class="avatar">
-                            <span class="avatar-initial rounded bg-label-secondary text-heading">
-                              <i class="icon-base ri ri-money-dollar-circle-line icon-24px"></i>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               <!-- Product List Table -->
               <div class="card">
-                <div class="card-header border-bottom">
-                  <h5 class="mb-0">Filter</h5>
-                  <div class="d-flex justify-content-between align-items-center row pt-4 gap-4 gap-md-0">
-                    <div class="col-md-4 product_status"></div>
-                    <div class="col-md-4 product_category"></div>
-                    <div class="col-md-4 product_stock"></div>
-                  </div>
-                </div>
                 <div class="card-datatable table-responsive">
                   <table class="datatables-products table">
                     <thead>
                       <tr>
-                        <th></th>
-                        <th></th>
-                        <th>Veículo</th>
+                        <th width="20%">Veículo</th>
                         <th>Marca</th>
                         <th>Modelo</th>
                         <th>Preço</th>
-                        <th>Status</th>
-                        <th>Ações</th>
+                        <th class="dt-right text-end">Ações</th>
                       </tr>
                     </thead>
+                    <tbody>
+                      @foreach($veiculos as $veiculo)
+                        <tr>
+                          <td width="50px"> 
+                            <div class="d-flex justify-content-start align-items-center product-name">
+                            <div class="avatar-wrapper">
+                              <div class="avatar avatar me-2 me-sm-4 rounded-2 bg-label-secondary">
+                                <img src="{{ $veiculo->foto1 }}" alt="Product-{{ $veiculo->id }}" class="rounded">
+                              </div>
+                            </div>
+                            <div class="d-flex flex-column">
+                              <h6 class="text-nowrap mb-0">{{ $veiculo->marca.' '.$veiculo->modelo}}</h6>
+                              <small class="text-truncate d-none d-sm-block" style="max-width: 250px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                                {{ $veiculo->descricao }}
+                            </div>
+                           </div>
+                          </td>
+                          <td><span> {{ $veiculo->marca }} </span></td>
+                          <td><span> {{ $veiculo->modelo }} </span></td>
+                          <td><span> R$ {{ number_format($veiculo->valor, 2, ',', '.') }} </span></td>
+                          <td>
+                            <div class="d-flex justify-content-end text-nowrap">
+                                <form action="/cadastros/veiculos/editar/{{ $veiculo->id }}" method="GET">
+                                    @csrf
+                                    <button class="btn btn-icon btn-text-secondary rounded-pill waves-effect"><i class="icon-base ri ri-edit-box-line icon-22px text-warning"></i></button>
+                                  </form>
+                                <form action="/cadastros/veiculos/{{ $veiculo->id }}" method="POST">
+                                  @csrf
+                                  @method('DELETE')
+                                  <button class="btn btn-icon btn-text-secondary rounded-pill waves-effect">
+                                    <i class="icon-base ri ri-delete-bin-2-line icon-22px text-danger"></i>
+                                  </button>
+                                </form>
+                              </div>
+                          </td>
+                        </tr>
+                      @endforeach
+                    </tbody>
                   </table>
                 </div>
               </div>

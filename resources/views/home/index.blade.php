@@ -8,7 +8,7 @@
       <div class="container">
 
 
-        <h2 class="text-center mb-2">Black Friday iCarros</h2>
+        <h2 class="text-center mb-2">Black Friday Carros.Net</h2>
         <p class="text-center text-body-secondary px-sm-12 mb-3">
           <span>Use nosso site para comparar, avaliar e decidir com confiança.</span><br />Aproveite as ofertas mais fortes do ano e garanta seu próximo carro hoje.
         </p>
@@ -19,157 +19,37 @@
         </div>
 
         <div class="pricing-plans row mx-0 mt-0">
-          <div class="col-4 mt-5">
-            <a href="#carro">
+          @foreach($veiculos as $veiculo)
+              <div class="col-4 mt-5">
+            <a href="/detalhes/{{ $veiculo->id }}">
               <div class="col-lg mb-md-0 mb-6 px-0">
                 <div class="card">
-                  <img class="card-img-top" src="https://img.olx.com.br/images/59/593541313619037.webp" alt="Mercedes">
+                  <img class="card-img-top" src="{{ $veiculo->foto1 }}" alt="{{ $veiculo->modelo }}">
                   <div class="card-body">
-                    <h5 class="card-title">Mercedes C180</h5>
-                    <p class="card-text">Carro novo etc Carro novo etcCarro novo etcCarro novo etc Carro novo etc.</p>
+                    <h5 class="card-title">{{ $veiculo->marca.' '.$veiculo->modelo}}</h5>
+                    <p class="card-text" style="
+                      display: -webkit-box;
+                      -webkit-line-clamp: 2;
+                      -webkit-box-orient: vertical;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                    ">
+                      {{ $veiculo->descricao }}
+                    </p>
                   </div>
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Blindado</li>
-                    <li class="list-group-item">6 Airbags</li>
+                    <li class="list-group-item d-flex justify-content-center">{{ number_format($veiculo->quilometragem, 0, ',', '.') }} Km</li>
+                    <li class="list-group-item d-flex justify-content-center">{{ $veiculo->ano }}</li>
                   </ul>
                   <div class="d-flex justify-content-center mt-4 mb-0">
-                    <h4 class="fw-medium mb-0 text-primary">R$ 120.000,00</h4>
+                    <h4 class="fw-medium mb-0 text-primary">R$ {{ number_format($veiculo->valor, 2, ',', '.') }}</h4>
                   </div>
-                  <div class="card-body">
-                      <p class="mb-2" style="color:black;">118.000 Km</p>
-                      <p class="mt-2 mb-0">Bauru - SP</p>
-                  </div>
+                </br>
                 </div>
               </a>
             </div>
           </div>
-
-          <div class="col-4 mt-5">
-            <a href="#carro">
-              <div class="col-lg mb-md-0 mb-6 px-0">
-                <div class="card">
-                  <img class="card-img-top" src="https://img.olx.com.br/images/59/593541313619037.webp" alt="Mercedes">
-                  <div class="card-body">
-                    <h5 class="card-title">Mercedes C180</h5>
-                    <p class="card-text">Carro novo etc Carro novo etcCarro novo etcCarro novo etc Carro novo etc.</p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Blindado</li>
-                    <li class="list-group-item">6 Airbags</li>
-                  </ul>
-                  <div class="d-flex justify-content-center mt-4 mb-0">
-                    <h4 class="fw-medium mb-0 text-primary">R$ 120.000,00</h4>
-                  </div>
-                  <div class="card-body">
-                      <p class="mb-2" style="color:black;">118.000 Km</p>
-                      <p class="mt-2 mb-0">Bauru - SP</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-4 mt-5">
-            <a href="#carro">
-              <div class="col-lg mb-md-0 mb-6 px-0">
-                <div class="card">
-                  <img class="card-img-top" src="https://img.olx.com.br/images/59/593541313619037.webp" alt="Mercedes">
-                  <div class="card-body">
-                    <h5 class="card-title">Mercedes C180</h5>
-                    <p class="card-text">Carro novo etc Carro novo etcCarro novo etcCarro novo etc Carro novo etc.</p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Blindado</li>
-                    <li class="list-group-item">6 Airbags</li>
-                  </ul>
-                  <div class="d-flex justify-content-center mt-4 mb-0">
-                    <h4 class="fw-medium mb-0 text-primary">R$ 120.000,00</h4>
-                  </div>
-                  <div class="card-body">
-                      <p class="mb-2" style="color:black;">118.000 Km</p>
-                      <p class="mt-2 mb-0">Bauru - SP</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-4 mt-5">
-            <a href="#carro">
-              <div class="col-lg mb-md-0 mb-6 px-0">
-                <div class="card">
-                  <img class="card-img-top" src="https://img.olx.com.br/images/59/593541313619037.webp" alt="Mercedes">
-                  <div class="card-body">
-                    <h5 class="card-title">Mercedes C180</h5>
-                    <p class="card-text">Carro novo etc Carro novo etcCarro novo etcCarro novo etc Carro novo etc.</p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Blindado</li>
-                    <li class="list-group-item">6 Airbags</li>
-                  </ul>
-                  <div class="d-flex justify-content-center mt-4 mb-0">
-                    <h4 class="fw-medium mb-0 text-primary">R$ 120.000,00</h4>
-                  </div>
-                  <div class="card-body">
-                      <p class="mb-2" style="color:black;">118.000 Km</p>
-                      <p class="mt-2 mb-0">Bauru - SP</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-4 mt-5">
-            <a href="#carro">
-              <div class="col-lg mb-md-0 mb-6 px-0">
-                <div class="card">
-                  <img class="card-img-top" src="https://img.olx.com.br/images/59/593541313619037.webp" alt="Mercedes">
-                  <div class="card-body">
-                    <h5 class="card-title">Mercedes C180</h5>
-                    <p class="card-text">Carro novo etc Carro novo etcCarro novo etcCarro novo etc Carro novo etc.</p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Blindado</li>
-                    <li class="list-group-item">6 Airbags</li>
-                  </ul>
-                  <div class="d-flex justify-content-center mt-4 mb-0">
-                    <h4 class="fw-medium mb-0 text-primary">R$ 120.000,00</h4>
-                  </div>
-                  <div class="card-body">
-                      <p class="mb-2" style="color:black;">118.000 Km</p>
-                      <p class="mt-2 mb-0">Bauru - SP</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-4 mt-5">
-            <a href="#carro">
-              <div class="col-lg mb-md-0 mb-6 px-0">
-                <div class="card">
-                  <img class="card-img-top" src="https://img.olx.com.br/images/59/593541313619037.webp" alt="Mercedes">
-                  <div class="card-body">
-                    <h5 class="card-title">Mercedes C180</h5>
-                    <p class="card-text">Carro novo etc Carro novo etcCarro novo etcCarro novo etc Carro novo etc.</p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Blindado</li>
-                    <li class="list-group-item">6 Airbags</li>
-                  </ul>
-                  <div class="d-flex justify-content-center mt-4 mb-0">
-                    <h4 class="fw-medium mb-0 text-primary">R$ 120.000,00</h4>
-                  </div>
-                  <div class="card-body">
-                      <p class="mb-2" style="color:black;">118.000 Km</p>
-                      <p class="mt-2 mb-0">Bauru - SP</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          
-         
+        @endforeach
         </div>
       </div>
     </section>

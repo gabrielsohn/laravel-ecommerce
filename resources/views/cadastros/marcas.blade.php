@@ -25,7 +25,10 @@
                               <td><span class="text-truncate d-flex align-items-center text-heading">{{ $marca->descricao }}</span></td>
                               <td>
                                 <div class="d-flex justify-content-end text-nowrap">
-                                  <button class="btn btn-icon btn-text-secondary rounded-pill waves-effect"><i class="icon-base ri ri-edit-box-line icon-22px text-warning"></i></button>
+                                  <form action="/cadastros/marcas/editar/{{ $marca->id }}" method="GET">
+                                    @csrf
+                                    <button class="btn btn-icon btn-text-secondary rounded-pill waves-effect"><i class="icon-base ri ri-edit-box-line icon-22px text-warning"></i></button>
+                                  </form>
                                   <form action="/cadastros/marcas/{{ $marca->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')

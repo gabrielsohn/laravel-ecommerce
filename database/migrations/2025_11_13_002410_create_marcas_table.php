@@ -19,7 +19,7 @@ return new class extends Migration
         DB::table('marcas')->insert([
             ['descricao' => 'Toyota'],
             ['descricao' => 'Volkswagen'],
-            ['descricao' => 'Mercedes-Benz'],
+            ['descricao' => 'Mercedes'],
             ['descricao' => 'BMW'],
             ['descricao' => 'Audi'],
             ['descricao' => 'Ford'],

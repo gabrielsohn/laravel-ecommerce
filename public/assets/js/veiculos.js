@@ -14,46 +14,12 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
   // Variable declaration for table
   const dt_product_table = document.querySelector('.datatables-products'),
-    productAdd = 'app-ecommerce-product-add.html',
-    statusObj = {
-      1: { title: 'Anunciado', class: 'bg-label-info' },
-      2: { title: 'Vendido', class: 'bg-label-success' },
-      3: { title: 'Cancelado', class: 'bg-label-danger' }
-    },
-    categoryObj = {
-      0: { title: 'Mercedes' },
-      1: { title: 'Hyundai' },
-      2: { title: 'Volkswagen' },
-      3: { title: 'Chevrolet' },
-      4: { title: 'Volvo' },
-      5: { title: 'Fiat' }
-    },
-    stockObj = {
-      0: { title: 'Out_of_Stock' },
-      1: { title: 'In_Stock' }
-    },
-    stockFilterValObj = {
-      0: { title: 'Out of Stock' },
-      1: { title: 'In Stock' }
-    };
-
+  productAdd = '/cadastros/veiculos/cadastrar';
   // E-commerce Products datatable
 
   if (dt_product_table) {
     var dt_products = new DataTable(dt_product_table, {
-      ajax: assetsPath + 'json/ecommerce-product-list.json',
-      columns: [
-        // columns according to JSON
-        { data: 'id' },
-        { data: 'id', orderable: false, render: DataTable.render.select() },
-        { data: 'product_name' },
-        { data: 'category' },
-        { data: 'stock' },
-        { data: 'price' },
-        { data: 'status' },
-        { data: 'id' }
-      ],
-      columnDefs: [
+    /*   columnDefs: [
         {
           // For Responsive
           className: 'control',
@@ -209,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
             return '';
           }
         },
-      ],
+      ], */
       select: {
         style: 'multi',
         selector: 'td:nth-child(2)'
@@ -222,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
             {
               search: {
                 className: 'me-5 ms-n4 pe-5 mb-n6 mb-md-0',
-                placeholder: 'Search',
+                placeholder: 'Pesquisar',
                 text: '_INPUT_'
               }
             }
@@ -445,7 +411,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
                   ]
                 },
                 {
-                  text: '<i class="icon-base ri ri-add-line me-0 me-sm-1 icon-16px"></i><span class="d-none d-sm-inline-block">Add Product</span>',
+                  text: '<i class="icon-base ri ri-add-line me-0 me-sm-1 icon-16px"></i><span class="d-none d-sm-inline-block">Adicionar Veiculo</span>',
                   className: 'add-new btn btn-primary',
                   action: function () {
                     window.location.href = productAdd;
@@ -509,87 +475,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
       },
       initComplete: function () {
         const api = this.api();
-
-        // Adding status filter once table is initialized
-        api.columns(-2).every(function () {
-          const column = this;
-          const select = document.createElement('select');
-          select.id = 'ProductStatus';
-          select.className = 'form-select text-capitalize';
-          select.innerHTML = '<option value="">Status</option>';
-
-          document.querySelector('.product_status').appendChild(select);
-
-          select.addEventListener('change', function () {
-            const val = select.value ? `^${select.value}$` : '';
-            column.search(val, true, false).draw();
-          });
-
-          column
-            .data()
-            .unique()
-            .sort()
-            .each(function (d) {
-              const option = document.createElement('option');
-              option.value = statusObj[d].title;
-              option.textContent = statusObj[d].title;
-              select.appendChild(option);
-            });
-        });
-
-        // Adding category filter once table is initialized
-        api.columns(3).every(function () {
-          const column = this;
-          const select = document.createElement('select');
-          select.id = 'ProductCategory';
-          select.className = 'form-select text-capitalize';
-          select.innerHTML = '<option value="">Marca</option>';
-
-          document.querySelector('.product_category').appendChild(select);
-
-          select.addEventListener('change', function () {
-            const val = select.value ? `^${select.value}$` : '';
-            column.search(val, true, false).draw();
-          });
-
-          column
-            .data()
-            .unique()
-            .sort()
-            .each(function (d) {
-              const option = document.createElement('option');
-              option.value = categoryObj[d].title;
-              option.textContent = categoryObj[d].title;
-              select.appendChild(option);
-            });
-        });
-
-        // Adding stock filter once table is initialized
-        api.columns(4).every(function () {
-          const column = this;
-          const select = document.createElement('select');
-          select.id = 'ProductStock';
-          select.className = 'form-select text-capitalize';
-          select.innerHTML = '<option value="">Modelo</option>';
-
-          document.querySelector('.product_stock').appendChild(select);
-
-          select.addEventListener('change', function () {
-            const val = select.value ? `^${select.value}$` : '';
-            column.search(val, true, false).draw();
-          });
-
-          column
-            .data()
-            .unique()
-            .sort()
-            .each(function (d) {
-              const option = document.createElement('option');
-              option.value = stockObj[d].title;
-              option.textContent = stockObj[d].title;
-              select.appendChild(option);
-            });
-        });
       }
     });
   }

@@ -25,11 +25,14 @@
                               <td><span class="text-truncate d-flex align-items-center text-heading">{{ $cor->descricao }}</span></td>
                               <td>
                                 <div class="d-flex justify-content-end text-nowrap">
-                                  <button class="btn btn-icon btn-text-secondary rounded-pill waves-effect"><i class="icon-base ri ri-edit-box-line icon-22px text-warning"></i></button>
+                                 <form action="/cadastros/cores/editar/{{ $cor->id }}" method="GET">
+                                    @csrf
+                                    <button class="btn btn-icon btn-text-secondary rounded-pill waves-effect"><i class="icon-base ri ri-edit-box-line icon-22px text-warning"></i></button>
+                                  </form>
                                   <form action="/cadastros/cores/{{ $cor->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-icon btn-text-secondary rounded-pill waves-effect" onClick="window.location ='/cadastr'">
+                                    <button class="btn btn-icon btn-text-secondary rounded-pill waves-effect">
                                       <i class="icon-base ri ri-delete-bin-2-line icon-22px text-danger"></i>
                                     </button>
                                   </form>

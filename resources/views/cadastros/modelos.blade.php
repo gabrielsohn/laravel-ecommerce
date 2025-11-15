@@ -23,11 +23,14 @@
                        @foreach($modelos as $modelo)
                           <tr>
                               <td>{{ $modelo->id }}</td>
-                              <td><span class="text-truncate d-flex align-items-center text-heading">{{ $modelo->descricao }}</span></td>
                               <td><span class="text-truncate d-flex align-items-center text-heading">{{ $modelo->marca->descricao }}</span></td>
+                              <td><span class="text-truncate d-flex align-items-center text-heading">{{ $modelo->descricao }}</span></td>
                               <td>
                                 <div class="d-flex justify-content-end text-nowrap">
-                                  <button class="btn btn-icon btn-text-secondary rounded-pill waves-effect"><i class="icon-base ri ri-edit-box-line icon-22px text-warning"></i></button>
+                                  <form action="/cadastros/modelos/editar/{{ $modelo->id }}" method="GET">
+                                    @csrf
+                                    <button class="btn btn-icon btn-text-secondary rounded-pill waves-effect"><i class="icon-base ri ri-edit-box-line icon-22px text-warning"></i></button>
+                                  </form>
                                   <form action="/cadastros/modelos/{{ $modelo->id }}" method="POST">
                                     @csrf
                                     @method('DELETE')

@@ -16,7 +16,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="robots" content="noindex" />
 
-    <title>Login | ICarros</title>
+    <title>Login | Carros.Net</title>
 
     <meta name="description" content="" />
 
@@ -80,73 +80,16 @@
               <a href="/" class="app-brand-link gap-3">
                 <span class="app-brand-logo demo">
                   <span class="text-primary">
-                    <svg width="30" height="24" viewBox="0 0 250 196" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M12.3002 1.25469L56.655 28.6432C59.0349 30.1128 60.4839 32.711 60.4839 35.5089V160.63C60.4839 163.468 58.9941 166.097 56.5603 167.553L12.2055 194.107C8.3836 196.395 3.43136 195.15 1.14435 191.327C0.395485 190.075 0 188.643 0 187.184V8.12039C0 3.66447 3.61061 0.0522461 8.06452 0.0522461C9.56056 0.0522461 11.0271 0.468577 12.3002 1.25469Z"
-                        fill="currentColor" />
-                      <path
-                        opacity="0.077704"
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M0 65.2656L60.4839 99.9629V133.979L0 65.2656Z"
-                        fill="black" />
-                      <path
-                        opacity="0.077704"
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M0 65.2656L60.4839 99.0795V119.859L0 65.2656Z"
-                        fill="black" />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M237.71 1.22393L193.355 28.5207C190.97 29.9889 189.516 32.5905 189.516 35.3927V160.631C189.516 163.469 191.006 166.098 193.44 167.555L237.794 194.108C241.616 196.396 246.569 195.151 248.856 191.328C249.605 190.076 250 188.644 250 187.185V8.09597C250 3.64006 246.389 0.027832 241.935 0.027832C240.444 0.027832 238.981 0.441882 237.71 1.22393Z"
-                        fill="currentColor" />
-                      <path
-                        opacity="0.077704"
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M250 65.2656L189.516 99.8897V135.006L250 65.2656Z"
-                        fill="black" />
-                      <path
-                        opacity="0.077704"
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M250 65.2656L189.516 99.0497V120.886L250 65.2656Z"
-                        fill="black" />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M12.2787 1.18923L125 70.3075V136.87L0 65.2465V8.06814C0 3.61223 3.61061 0 8.06452 0C9.552 0 11.0105 0.411583 12.2787 1.18923Z"
-                        fill="currentColor" />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M12.2787 1.18923L125 70.3075V136.87L0 65.2465V8.06814C0 3.61223 3.61061 0 8.06452 0C9.552 0 11.0105 0.411583 12.2787 1.18923Z"
-                        fill="white"
-                        fill-opacity="0.15" />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M237.721 1.18923L125 70.3075V136.87L250 65.2465V8.06814C250 3.61223 246.389 0 241.935 0C240.448 0 238.99 0.411583 237.721 1.18923Z"
-                        fill="currentColor" />
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M237.721 1.18923L125 70.3075V136.87L250 65.2465V8.06814C250 3.61223 246.389 0 241.935 0C240.448 0 238.99 0.411583 237.721 1.18923Z"
-                        fill="white"
-                        fill-opacity="0.3" />
-                    </svg>
+                    <svg width="30" height="24" fill="#529193" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 111.847 111.847" xml:space="preserve" stroke="#529193"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M108.626,53.994l1.239-0.943v-5.953l-1.239-0.916v-1.391v-0.928l3.221-2.58l-3.221-2.027 C86.933,24.417,47.928,27.176,47.928,27.176c-9.219,0-26.801,21.2-26.801,21.2s-10.071,1.687-16.659,5.636 c-6.584,3.949-3.946,19.757-3.946,19.757h10.205c0-6.544,5.308-11.854,11.854-11.854c6.547,0,11.851,5.311,11.851,11.854h48.894 c0-6.544,5.308-11.854,11.854-11.854c6.543,0,11.848,5.311,11.848,11.854h1.598v-3.604l1.979-2.167v-7.888l-1.979-2.632V53.994z M9.771,59.686H4.304V56.23h5.467V59.686z M62.523,47.052H29.552c0,0,11.735-14.903,17.318-14.903c5.588,0,15.649,0,15.649,0 v14.903H62.523z M66.924,47.102V31.787c0,0,22.792,0.786,31.241,15.314H66.924z"></path> <path d="M22.417,62.661c-6.126,0-11.105,4.979-11.105,11.101c0,6.13,4.982,11.112,11.105,11.112 c6.122,0,11.108-4.982,11.108-11.112C33.526,67.639,28.54,62.661,22.417,62.661z M22.417,82.399c-4.759,0-8.631-3.87-8.631-8.638 c0-4.753,3.872-8.623,8.631-8.623c4.758,0,8.634,3.87,8.634,8.623C31.048,78.525,27.176,82.399,22.417,82.399z"></path> <path d="M94.962,62.661c-6.126,0-11.105,4.979-11.105,11.101c0,0.343,0.068,0.661,0.103,0.986H35.17v3.456h48.796V74.85 c0.559,5.612,5.246,10.021,10.996,10.021c6.122,0,11.104-4.983,11.104-11.112C106.067,67.639,101.084,62.661,94.962,62.661z M94.962,82.399c-4.761,0-8.631-3.87-8.631-8.638c0-4.753,3.867-8.623,8.631-8.623c4.76,0,8.63,3.87,8.63,8.623 C103.592,78.525,99.722,82.399,94.962,82.399z"></path> </g> </g> </g></svg>
                   </span>
                 </span>
-                <span class="app-brand-text demo text-heading fw-semibold">ICarros</span>
+                <span class="app-brand-text demo text-heading fw-semibold">Carros.Net</span>
               </a>
             </div>
             <!-- /Logo -->
 
             <div class="card-body mt-1">
-              <h4 class="mb-1">Bem vindo ao ICarros! 👋🏻</h4>
+              <h4 class="mb-1">Bem vindo ao Carros.Net! 👋🏻</h4>
               <p class="mb-5">Acesse a área privativa para fazer a manutenção dos cadastros</p>
 
               <form id="formAuthentication" class="mb-5" action="{{ route('login') }}" method="POST">

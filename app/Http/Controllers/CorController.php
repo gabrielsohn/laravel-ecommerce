@@ -24,6 +24,36 @@ class CorController extends Controller
         return view('cadastros.cad-cores');
     }
 
+    public function edit(int $id)
+    {
+        $cor = Cor::findOrFail($id);
+        return view('cadastros.edit-cores', [
+                'cor' => $cor
+            ]
+        );
+    }
+
+    public function update(Request $request, int $id)
+    {
+        $request->validate([
+            'descricao' => 'required|string|max:100'
+        ]);
+        
+        $cor = Cor::findOrFail($id);
+
+        // Atualiza a propriedade 'cor' no modelo
+        $cor->descricao = $request->input('descricao');
+
+        // Salva a alteração no banco de dados
+        $cor->save();
+
+        $cores = Cor::orderBy('descricao')->get();
+        return view('cadastros.cores', [
+                'cores' => $cores
+            ]
+        );
+    }
+
     /**
      * Cria uma nova cores
      */
