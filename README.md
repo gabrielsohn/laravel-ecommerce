@@ -26,16 +26,7 @@ composer install
 
 ---
 
-## 🎨 3. Instalar dependências frontend (se necessário)
-
-npm install
-npm run dev
-# ou produção:
-# npm run build
-
----
-
-## ⚙️ 4. Criar e configurar o .env
+## ⚙️ 3. Criar e configurar o .env
 
 cp .env.example .env
 
@@ -48,19 +39,16 @@ DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=
 
-Gerar chave:
-
-php artisan key:generate
 
 ---
 
-## 🗄️ 5. Executar migrations
+## 🗄️ 4. Executar migrations
 
 php artisan migrate
 
 ---
 
-## 🚀 6. Executar o servidor
+## 🚀 5. Executar o servidor
 
 php artisan serve
 
@@ -69,7 +57,7 @@ http://127.0.0.1:8000
 
 ---
 
-## 🔐 7. Acesso
+## 🔐 6. Acesso
 
 - Criar conta pela própria aplicação  
 - Ou recuperar senha pela tela de "Esqueceu a Senha"
